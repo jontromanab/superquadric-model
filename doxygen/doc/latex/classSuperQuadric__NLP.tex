@@ -1,0 +1,1081 @@
+\section{Super\-Quadric\-\_\-\-N\-L\-P Class Reference}
+\label{classSuperQuadric__NLP}\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}}
+
+
+This class solves the optimization problem with the Ipopt software package and returns the estiamted superquadric, better fitting a given point cloud.  
+
+
+
+
+{\ttfamily \#include $<$superquadric.\-h$>$}
+
+
+
+Inherits T\-N\-L\-P.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSuperQuadric__NLP_a7e39371548648a9b8d9673084ed5407d}{init} ()\label{classSuperQuadric__NLP_a7e39371548648a9b8d9673084ed5407d}
+
+\begin{DoxyCompactList}\small\item\em Init function. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_a6895a29435328142fcb31a4827742fa6}{set\-Points} (const std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&point\-\_\-cloud, const int \&optimizer\-\_\-points)
+\begin{DoxyCompactList}\small\item\em Set point to be used for superquadric estimation. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_aebc2844bb4fb3ff0399fc8fef8198229}{configure} (yarp\-::os\-::\-Resource\-Finder $\ast$rf, bool bounds\-\_\-aut, const std\-::string \&object\-\_\-class)
+\begin{DoxyCompactList}\small\item\em Configure function. \end{DoxyCompactList}\item 
+yarp\-::sig\-::\-Vector \hyperlink{classSuperQuadric__NLP_a20d671b200f1b23358792ee81aa77552}{get\-\_\-result} () const 
+\begin{DoxyCompactList}\small\item\em Extract the solution. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a964efe0e0fe66464238f99885c6323bf}{read\-Matrix} (const std\-::string \&tag, yarp\-::sig\-::\-Matrix \&matrix, const int \&dimension, yarp\-::os\-::\-Resource\-Finder $\ast$rf)
+\begin{DoxyCompactList}\small\item\em Function for reading matrices from config files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+yarp\-::sig\-::\-Vector {\bfseries solution}\label{classSuperQuadric__NLP_abf380018deaca365a8b7cd837f36f1fa}
+
+\item 
+std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ {\bfseries points\-\_\-downsampled}\label{classSuperQuadric__NLP_a9577e3ef86a127dec53a64953926c288}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classSuperQuadric__NLP_a2599f20c7a4c6eb3da7dec612098d1b4}{get\-\_\-nlp\-\_\-info} (Ipopt\-::\-Index \&n, Ipopt\-::\-Index \&m, Ipopt\-::\-Index \&nnz\-\_\-jac\-\_\-g, Ipopt\-::\-Index \&nnz\-\_\-h\-\_\-lag, Ipopt\-::\-T\-N\-L\-P\-::\-Index\-Style\-Enum \&index\-\_\-style)
+\begin{DoxyCompactList}\small\item\em Get info for the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_aaafe8516b6f3e68caf218f6cfb048c1b}{compute\-Bounds} ()\label{classSuperQuadric__NLP_aaafe8516b6f3e68caf218f6cfb048c1b}
+
+\begin{DoxyCompactList}\small\item\em Compute bounds variable from the point cloud for speeding up optimization. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a9f303ff4d778230990fd151631c2d9d4}{get\-\_\-bounds\-\_\-info} (Ipopt\-::\-Index n, Ipopt\-::\-Number $\ast$x\-\_\-l, Ipopt\-::\-Number $\ast$x\-\_\-u, Ipopt\-::\-Index m, Ipopt\-::\-Number $\ast$g\-\_\-l, Ipopt\-::\-Number $\ast$g\-\_\-u)
+\begin{DoxyCompactList}\small\item\em Get variable bounds for the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a05ec724269d1060c5e53112817938639}{get\-\_\-starting\-\_\-point} (Ipopt\-::\-Index n, bool init\-\_\-x, Ipopt\-::\-Number $\ast$x, bool init\-\_\-z, Ipopt\-::\-Number $\ast$z\-\_\-\-L, Ipopt\-::\-Number $\ast$z\-\_\-\-U, Ipopt\-::\-Index m, bool init\-\_\-lambda, Ipopt\-::\-Number $\ast$lambda)
+\begin{DoxyCompactList}\small\item\em Get the starting point for the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_ab33c41e6fa8674c1434aac9b18a62d37}{eval\-\_\-f} (Ipopt\-::\-Index n, const Ipopt\-::\-Number $\ast$x, bool new\-\_\-x, Ipopt\-::\-Number \&obj\-\_\-value)
+\begin{DoxyCompactList}\small\item\em Cost function of the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_afaecc87e024a55c07d13f45b8e7af173}{F} (const Ipopt\-::\-Number $\ast$x, std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&points, bool \&new\-\_\-x)
+\begin{DoxyCompactList}\small\item\em Auxiliary function for computing cost function of the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+double \hyperlink{classSuperQuadric__NLP_a016ed88992ee15c29adf280e56aee0fc}{f} (const Ipopt\-::\-Number $\ast$x, yarp\-::sig\-::\-Vector \&point\-\_\-cloud)
+\begin{DoxyCompactList}\small\item\em Auxiliary function for computing cost function of the nonlinear problem to be solved with ipopt. \end{DoxyCompactList}\item 
+double \hyperlink{classSuperQuadric__NLP_adc57687952c43086dff7b2da7c3456a8}{F\-\_\-v} (const yarp\-::sig\-::\-Vector \&x, const std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Auxiliary function for computing the gradient of cost function of the nonlinear problem. \end{DoxyCompactList}\item 
+double \hyperlink{classSuperQuadric__NLP_a81a0405a68364995c9209bf30901f26f}{f\-\_\-v} (const yarp\-::sig\-::\-Vector \&x, const yarp\-::sig\-::\-Vector \&point\-\_\-cloud)
+\begin{DoxyCompactList}\small\item\em Auxiliary function for computing the gradient cost function of the nonlinear problem. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a7ad18ed5adb66e686409183651de562c}{eval\-\_\-grad\-\_\-f} (Ipopt\-::\-Index n, const Ipopt\-::\-Number $\ast$x, bool new\-\_\-x, Ipopt\-::\-Number $\ast$grad\-\_\-f)
+\begin{DoxyCompactList}\small\item\em Gradient of the cost function of the nonlinear problem. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a43a2c0f905b6e38045bcb55a93ae8654}{eval\-\_\-g} (Ipopt\-::\-Index n, const Ipopt\-::\-Number $\ast$x, bool new\-\_\-x, Ipopt\-::\-Index m, Ipopt\-::\-Number $\ast$g)
+\begin{DoxyCompactList}\small\item\em Constraints of the nonlinear problem. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperQuadric__NLP_a2eac4aa901938d0637769c66d68aeec2}{eval\-\_\-jac\-\_\-g} (Ipopt\-::\-Index n, const Ipopt\-::\-Number $\ast$x, bool new\-\_\-x, Ipopt\-::\-Index m, Ipopt\-::\-Index nele\-\_\-jac, Ipopt\-::\-Index $\ast$i\-Row, Ipopt\-::\-Index $\ast$j\-Col, Ipopt\-::\-Number $\ast$values)
+\begin{DoxyCompactList}\small\item\em Jacobian of the constraints of the nonlinear problem. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_a7395729e42b83d083b88451620ede9c6}{compute\-X0} (yarp\-::sig\-::\-Vector \&x0, std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&point\-\_\-cloud)
+\begin{DoxyCompactList}\small\item\em Compute a good starting point for the nonlinear problem. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_a6fd9bdffb81bfdfec56bae2efd58c270}{compute\-Initial\-Orientation} (yarp\-::sig\-::\-Vector \&x0, std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&point\-\_\-cloud)
+\begin{DoxyCompactList}\small\item\em Compute initial superquadric orientation from the point cloud. \end{DoxyCompactList}\item 
+yarp\-::sig\-::\-Matrix \hyperlink{classSuperQuadric__NLP_a425745a725c4f0dba398a6b5389809a7}{compute\-Bounding\-Box} (std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&points, const yarp\-::sig\-::\-Vector \&x0)
+\begin{DoxyCompactList}\small\item\em Compute bounding box from the point cloud. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperQuadric__NLP_a2f0b1fc45d42b0ee77c343ea7c227874}{finalize\-\_\-solution} (Ipopt\-::\-Solver\-Return status, Ipopt\-::\-Index n, const Ipopt\-::\-Number $\ast$x, const Ipopt\-::\-Number $\ast$z\-\_\-\-L, const Ipopt\-::\-Number $\ast$z\-\_\-\-U, Ipopt\-::\-Index m, const Ipopt\-::\-Number $\ast$g, const Ipopt\-::\-Number $\ast$lambda, Ipopt\-::\-Number obj\-\_\-value, const Ipopt\-::\-Ipopt\-Data $\ast$ip\-\_\-data, Ipopt\-::\-Ipopt\-Calculated\-Quantities $\ast$ip\-\_\-cq)
+\begin{DoxyCompactList}\small\item\em Finalize the solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries bounds\-\_\-automatic}\label{classSuperQuadric__NLP_ac4ae54a0a2bc47b2a984278a4e57400c}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries x\-\_\-v}\label{classSuperQuadric__NLP_a4215586669b4e4e835993634290cac9a}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries x0}\label{classSuperQuadric__NLP_a25e5121f404d68a8fa0122e803945f8b}
+
+\item 
+yarp\-::sig\-::\-Matrix {\bfseries bounds}\label{classSuperQuadric__NLP_a3300e78dabc6dc8fd7e959c176b8a32c}
+
+\item 
+double {\bfseries aux\-\_\-objvalue}\label{classSuperQuadric__NLP_ad0bf24004b855864ad0a498f9fb13c81}
+
+\item 
+std\-::string {\bfseries obj\-\_\-class}\label{classSuperQuadric__NLP_a6806ddd4f4b035abbf7835e4b38931ca}
+
+\item 
+yarp\-::os\-::\-Resource\-Finder $\ast$ {\bfseries rf}\label{classSuperQuadric__NLP_a7dc22430259697726ab6341fc2e95074}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class solves the optimization problem with the Ipopt software package and returns the estiamted superquadric, better fitting a given point cloud. 
+
+Definition at line 36 of file superquadric.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!compute\-Bounding\-Box@{compute\-Bounding\-Box}}
+\index{compute\-Bounding\-Box@{compute\-Bounding\-Box}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{compute\-Bounding\-Box}]{\setlength{\rightskip}{0pt plus 5cm}Matrix Super\-Quadric\-\_\-\-N\-L\-P\-::compute\-Bounding\-Box (
+\begin{DoxyParamCaption}
+\item[{std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{points, }
+\item[{const yarp\-::sig\-::\-Vector \&}]{x0}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a425745a725c4f0dba398a6b5389809a7}
+
+
+Compute bounding box from the point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & is the point cloud \\
+\hline
+{\em x0} & is the initial value for the superquadric to be estimated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix with the variable boundss 
+\end{DoxyReturn}
+
+
+Definition at line 345 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+346 \{
+347     Matrix BB(3,2);
+348     Matrix R3(3,3);
+349 
+350     R3=euler2dcm(x0.subVector(8,10)).submatrix(0,2,0,2);
+351 
+352     Vector point(3,0.0);
+353     point=R3.transposed()*points[0];
+354 
+355     BB(0,0)=point[0];
+356     BB(1,0)=point[1];
+357     BB(2,0)=point[2];
+358     BB(0,1)=point[0];
+359     BB(1,1)=point[1];
+360     BB(2,1)=point[2];
+361 
+362     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<points.size();i++)
+363     \{
+364         Vector &pnt=points[i];
+365         point=R3.transposed()*pnt;
+366         \textcolor{keywordflow}{if}(BB(0,0)>point[0])
+367            BB(0,0)=point[0];
+368 
+369         \textcolor{keywordflow}{if}(BB(0,1)<point[0])
+370             BB(0,1)=point[0];
+371 
+372         \textcolor{keywordflow}{if}(BB(1,0)>point[1])
+373             BB(1,0)=point[1];
+374 
+375         \textcolor{keywordflow}{if}(BB(1,1)<point[1])
+376             BB(1,1)=point[1];
+377 
+378         \textcolor{keywordflow}{if}(BB(2,0)>point[2])
+379             BB(2,0)=point[2];
+380 
+381         \textcolor{keywordflow}{if}(BB(2,1)<point[2])
+382             BB(2,1)=point[2];
+383     \}
+384 
+385     \textcolor{keywordflow}{return} BB;
+386 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!compute\-Initial\-Orientation@{compute\-Initial\-Orientation}}
+\index{compute\-Initial\-Orientation@{compute\-Initial\-Orientation}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{compute\-Initial\-Orientation}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::compute\-Initial\-Orientation (
+\begin{DoxyParamCaption}
+\item[{yarp\-::sig\-::\-Vector \&}]{x0, }
+\item[{std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{point\-\_\-cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a6fd9bdffb81bfdfec56bae2efd58c270}
+
+
+Compute initial superquadric orientation from the point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & is the initial value for the superquadric to be estimated \\
+\hline
+{\em point\-\_\-cloud} & is the object point cloud \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+299 \{
+300     Matrix M=zeros(3,3);
+301     Matrix R(3,3);
+302     Matrix u(3,3);
+303     Matrix v(3,3);
+304 
+305     Vector s(3,0.0);
+306     Vector n(3,0.0);
+307     Vector o(3,0.0);
+308     Vector a(3,0.0);
+309 
+310     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0;i<point\_cloud.size(); i++)
+311     \{
+312         Vector &point=point\_cloud[i];
+313         M(0,0)= M(0,0) + (point[1]-x0[6])*(point[1]-x0[6]) + (point[2]-x0[7])*(point[2]-x0[7]);
+314         M(0,1)= M(0,1) - (point[1]-x0[6])*(point[0]-x0[5]);
+315         M(0,2)= M(0,2) - (point[2]-x0[7])*(point[0]-x0[5]);
+316         M(1,1)= M(1,1) + (point[0]-x0[5])*(point[0]-x0[5]) + (point[2]-x0[7])*(point[2]-x0[7]);
+317         M(2,2)= M(2,2) + (point[1]-x0[6])*(point[1]-x0[6]) + (point[0]-x0[5])*(point[0]-x0[5]);
+318         M(1,2)= M(1,2) - (point[2]-x0[7])*(point[1]-x0[6]);
+319     \}
+320 
+321     M(0,0)= M(0,0)/point\_cloud.size();
+322     M(0,1)= M(0,1)/point\_cloud.size();
+323     M(0,2)= M(0,2)/point\_cloud.size();
+324     M(1,1)= M(1,1)/point\_cloud.size();
+325     M(2,2)= M(2,2)/point\_cloud.size();
+326     M(1,2)= M(1,2)/point\_cloud.size();
+327 
+328     M(1,0)= M(0,1);
+329     M(2,0)= M(0,2);
+330     M(2,1)= M(1,2);
+331 
+332     SVDJacobi(M,u,s,v);
+333     n=u.getCol(0);
+334     o=u.getCol(1);
+335     a=u.getCol(2);
+336 
+337     R.setCol(0,n);
+338     R.setCol(1,o);
+339     R.setCol(2,a);
+340 
+341     x0.setSubvector(8,dcm2euler(R));
+342 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!compute\-X0@{compute\-X0}}
+\index{compute\-X0@{compute\-X0}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{compute\-X0}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::compute\-X0 (
+\begin{DoxyParamCaption}
+\item[{yarp\-::sig\-::\-Vector \&}]{x0, }
+\item[{std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{point\-\_\-cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a7395729e42b83d083b88451620ede9c6}
+
+
+Compute a good starting point for the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & is the initial value for the superquadric to be estimated \\
+\hline
+{\em point\-\_\-cloud} & is the object point cloud \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+268 \{
+269     x0[3]=1.0;
+270     x0[4]=1.0;
+271     x0[5]=0.0;
+272     x0[6]=0.0;
+273     x0[7]=0.0;
+274 
+275     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<point\_cloud.size();i++)
+276     \{
+277         Vector &point=point\_cloud[i];
+278         x0[5]+=point[0];
+279         x0[6]+=point[1];
+280         x0[7]+=point[2];
+281     \}
+282 
+283     x0[5]/=point\_cloud.size();
+284     x0[6]/=point\_cloud.size();
+285     x0[7]/=point\_cloud.size();
+286 
+287     computeInitialOrientation(x0,point\_cloud);
+288 
+289     Matrix bounding\_box(3,2);
+290     bounding\_box=computeBoundingBox(point\_cloud,x0);
+291 
+292     x0[0]=(-bounding\_box(0,0)+bounding\_box(0,1))/2;
+293     x0[1]=(-bounding\_box(1,0)+bounding\_box(1,1))/2;
+294     x0[2]=(-bounding\_box(2,0)+bounding\_box(2,1))/2;
+295 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!configure@{configure}}
+\index{configure@{configure}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::configure (
+\begin{DoxyParamCaption}
+\item[{yarp\-::os\-::\-Resource\-Finder $\ast$}]{rf, }
+\item[{bool}]{bounds\-\_\-aut, }
+\item[{const std\-::string \&}]{object\-\_\-class}
+\end{DoxyParamCaption}
+)}\label{classSuperQuadric__NLP_aebc2844bb4fb3ff0399fc8fef8198229}
+
+
+Configure function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rf} & is the resource finder \\
+\hline
+{\em bounds\-\_\-aut} & is to set or not the automatic computation of the variable bound \\
+\hline
+{\em object\-\_\-class} & is the object class according to its shape \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+257 \{
+258     bounds.resize(11,2);
+259 
+260     bounds\_automatic=b\_automatic;
+261     obj\_class=object\_class;
+262 
+263     readMatrix(\textcolor{stringliteral}{"bounds\_"}+object\_class,bounds, 11, rf);
+264 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!eval\-\_\-f@{eval\-\_\-f}}
+\index{eval\-\_\-f@{eval\-\_\-f}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{eval\-\_\-f}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::eval\-\_\-f (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{bool}]{new\-\_\-x, }
+\item[{Ipopt\-::\-Number \&}]{obj\-\_\-value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_ab33c41e6fa8674c1434aac9b18a62d37}
+
+
+Cost function of the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em new\-\_\-x} & takes into account is the variable has been updated or not \\
+\hline
+{\em obj\-\_\-value} & is the value of the cost function  true \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+140  \{
+141      F(x,points\_downsampled, new\_x);
+142      obj\_value=aux\_objvalue;
+143      \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+144  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!eval\-\_\-g@{eval\-\_\-g}}
+\index{eval\-\_\-g@{eval\-\_\-g}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{eval\-\_\-g}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::eval\-\_\-g (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{bool}]{new\-\_\-x, }
+\item[{Ipopt\-::\-Index}]{m, }
+\item[{Ipopt\-::\-Number $\ast$}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a43a2c0f905b6e38045bcb55a93ae8654}
+
+
+Constraints of the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em new\-\_\-x} & takes into account is the variable has been updated or not \\
+\hline
+{\em g} & is the values of the constraints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+243  \{
+244      \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+245  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!eval\-\_\-grad\-\_\-f@{eval\-\_\-grad\-\_\-f}}
+\index{eval\-\_\-grad\-\_\-f@{eval\-\_\-grad\-\_\-f}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{eval\-\_\-grad\-\_\-f}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::eval\-\_\-grad\-\_\-f (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{bool}]{new\-\_\-x, }
+\item[{Ipopt\-::\-Number $\ast$}]{grad\-\_\-f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a7ad18ed5adb66e686409183651de562c}
+
+
+Gradient of the cost function of the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the variable \\
+\hline
+{\em n} & is the dimension of the variable \\
+\hline
+{\em new\-\_\-x} & takes into account is the variable has been updated or not \\
+\hline
+{\em grad\-\_\-f} & is the gradient of the cost function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+216  \{
+217      Vector x\_tmp(n,0.0);
+218      \textcolor{keywordtype}{double} grad\_p, grad\_n;
+219      \textcolor{keywordtype}{double} eps=1e-8;
+220 
+221      \textcolor{keywordflow}{for} (Ipopt::Index j=0;j<n;j++)
+222          x\_tmp[j]=x[j];
+223 
+224      \textcolor{keywordflow}{for} (Ipopt::Index j=0;j<n;j++)
+225      \{
+226          x\_tmp[j]+=eps;
+227 
+228          grad\_p=F_v(x\_tmp,points\_downsampled);
+229 
+230          x\_tmp[j]-=eps;
+231 
+232          grad\_n=F_v(x\_tmp,points\_downsampled);
+233 
+234          grad\_f[j]=(grad\_p-grad\_n)/eps;
+235       \}
+236 
+237      \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+238  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!eval\-\_\-jac\-\_\-g@{eval\-\_\-jac\-\_\-g}}
+\index{eval\-\_\-jac\-\_\-g@{eval\-\_\-jac\-\_\-g}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{eval\-\_\-jac\-\_\-g}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::eval\-\_\-jac\-\_\-g (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{bool}]{new\-\_\-x, }
+\item[{Ipopt\-::\-Index}]{m, }
+\item[{Ipopt\-::\-Index}]{nele\-\_\-jac, }
+\item[{Ipopt\-::\-Index $\ast$}]{i\-Row, }
+\item[{Ipopt\-::\-Index $\ast$}]{j\-Col, }
+\item[{Ipopt\-::\-Number $\ast$}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a2eac4aa901938d0637769c66d68aeec2}
+
+
+Jacobian of the constraints of the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em new\-\_\-x} & takes into account is the variable has been updated or not \\
+\hline
+{\em i\-Row} & contains the jacobian raws \\
+\hline
+{\em i\-Col} & contains the jacobian columns \\
+\hline
+{\em values} & contains the jacobian values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+251  \{
+252      \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+253  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!F@{F}}
+\index{F@{F}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{F}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::\-F (
+\begin{DoxyParamCaption}
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{points, }
+\item[{bool \&}]{new\-\_\-x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_afaecc87e024a55c07d13f45b8e7af173}
+
+
+Auxiliary function for computing cost function of the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the variable \\
+\hline
+{\em points\-\_\-on} & is object point cloud \\
+\hline
+{\em new\-\_\-x} & takes into account is the variable has been updated or not  the cost function value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+148  \{
+149      \textcolor{keywordflow}{if} (new\_x)
+150      \{
+151          \textcolor{keywordtype}{double} value=0.0;
+152 
+153          \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i=0;i<points.size();i++)
+154          \{
+155              \textcolor{keywordtype}{double} tmp=pow(f(x,points[i]),x[3])-1;
+156              value+=tmp*tmp;
+157          \}
+158          value*=x[0]*x[1]*x[2]/points.size();
+159          aux\_objvalue=value;
+160      \}
+161  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!f@{f}}
+\index{f@{f}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}double Super\-Quadric\-\_\-\-N\-L\-P\-::f (
+\begin{DoxyParamCaption}
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{yarp\-::sig\-::\-Vector \&}]{point\-\_\-cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a016ed88992ee15c29adf280e56aee0fc}
+
+
+Auxiliary function for computing cost function of the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & is the Vector of the object \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em point} & is one point of the point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a part of the cost function value 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+165  \{
+166      Vector euler(3,0.0);
+167      euler[0]=x[8];
+168      euler[1]=x[9];
+169      euler[2]=x[10];
+170      Matrix R=euler2dcm(euler);
+171 
+172      \textcolor{keywordtype}{double} num1=R(0,0)*point\_cloud[0]+R(0,1)*point\_cloud[1]+R(0,2)*point\_cloud[2]-x[5]*R(0,0)-x[6]*R(0,1)-
+      x[7]*R(0,2);
+173      \textcolor{keywordtype}{double} num2=R(1,0)*point\_cloud[0]+R(1,1)*point\_cloud[1]+R(1,2)*point\_cloud[2]-x[5]*R(1,0)-x[6]*R(1,1)-
+      x[7]*R(1,2);
+174      \textcolor{keywordtype}{double} num3=R(2,0)*point\_cloud[0]+R(2,1)*point\_cloud[1]+R(2,2)*point\_cloud[2]-x[5]*R(2,0)-x[6]*R(2,1)-
+      x[7]*R(2,2);
+175      \textcolor{keywordtype}{double} tmp=pow(abs(num1/x[0]),2.0/x[4]) + pow(abs(num2/x[1]),2.0/x[4]);
+176 
+177      \textcolor{keywordflow}{return} pow( abs(tmp),x[4]/x[3]) + pow( abs(num3/x[2]),(2.0/x[3]));
+178  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!F\-\_\-v@{F\-\_\-v}}
+\index{F\-\_\-v@{F\-\_\-v}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{F\-\_\-v}]{\setlength{\rightskip}{0pt plus 5cm}double Super\-Quadric\-\_\-\-N\-L\-P\-::\-F\-\_\-v (
+\begin{DoxyParamCaption}
+\item[{const yarp\-::sig\-::\-Vector \&}]{x, }
+\item[{const std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{points}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_adc57687952c43086dff7b2da7c3456a8}
+
+
+Auxiliary function for computing the gradient of cost function of the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the variable \\
+\hline
+{\em points\-\_\-on} & is one point of object point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost function value 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+182  \{
+183      \textcolor{keywordtype}{double} value=0.0;
+184 
+185      \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0;i<points.size();i++)
+186      \{
+187           \textcolor{keywordtype}{double} tmp=pow(f_v(x,points[i]),x[3])-1;
+188           value+=tmp*tmp;
+189      \}
+190 
+191      value*=x[0]*x[1]*x[2]/points.size();
+192      \textcolor{keywordflow}{return} value;
+193  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!f\-\_\-v@{f\-\_\-v}}
+\index{f\-\_\-v@{f\-\_\-v}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{f\-\_\-v}]{\setlength{\rightskip}{0pt plus 5cm}double Super\-Quadric\-\_\-\-N\-L\-P\-::f\-\_\-v (
+\begin{DoxyParamCaption}
+\item[{const yarp\-::sig\-::\-Vector \&}]{x, }
+\item[{const yarp\-::sig\-::\-Vector \&}]{point\-\_\-cloud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a81a0405a68364995c9209bf30901f26f}
+
+
+Auxiliary function for computing the gradient cost function of the nonlinear problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & is the Vector of the object \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em point} & is one point of the point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a part of the cost function value 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+197  \{
+198      Vector euler(3,0.0);
+199 
+200      euler[0]=x[8];
+201      euler[1]=x[9];
+202      euler[2]=x[10];
+203      Matrix R=euler2dcm(euler);
+204 
+205      \textcolor{keywordtype}{double} num1=R(0,0)*point\_cloud[0]+R(0,1)*point\_cloud[1]+R(0,2)*point\_cloud[2]-x[5]*R(0,0)-x[6]*R(0,1)-
+      x[7]*R(0,2);
+206      \textcolor{keywordtype}{double} num2=R(1,0)*point\_cloud[0]+R(1,1)*point\_cloud[1]+R(1,2)*point\_cloud[2]-x[5]*R(1,0)-x[6]*R(1,1)-
+      x[7]*R(1,2);
+207      \textcolor{keywordtype}{double} num3=R(2,0)*point\_cloud[0]+R(2,1)*point\_cloud[1]+R(2,2)*point\_cloud[2]-x[5]*R(2,0)-x[6]*R(2,1)-
+      x[7]*R(2,2);
+208      \textcolor{keywordtype}{double} tmp=pow(abs(num1/x[0]),2.0/x[4]) + pow(abs(num2/x[1]),2.0/x[4]);
+209 
+210      \textcolor{keywordflow}{return} pow( abs(tmp),x[4]/x[3]) + pow( abs(num3/x[2]),(2.0/x[3]) );
+211  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!finalize\-\_\-solution@{finalize\-\_\-solution}}
+\index{finalize\-\_\-solution@{finalize\-\_\-solution}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{finalize\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::finalize\-\_\-solution (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Solver\-Return}]{status, }
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{const Ipopt\-::\-Number $\ast$}]{x, }
+\item[{const Ipopt\-::\-Number $\ast$}]{z\-\_\-\-L, }
+\item[{const Ipopt\-::\-Number $\ast$}]{z\-\_\-\-U, }
+\item[{Ipopt\-::\-Index}]{m, }
+\item[{const Ipopt\-::\-Number $\ast$}]{g, }
+\item[{const Ipopt\-::\-Number $\ast$}]{lambda, }
+\item[{Ipopt\-::\-Number}]{obj\-\_\-value, }
+\item[{const Ipopt\-::\-Ipopt\-Data $\ast$}]{ip\-\_\-data, }
+\item[{Ipopt\-::\-Ipopt\-Calculated\-Quantities $\ast$}]{ip\-\_\-cq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a2f0b1fc45d42b0ee77c343ea7c227874}
+
+
+Finalize the solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em init\-\_\-z} & is an ipopt variable \\
+\hline
+{\em z\-\_\-\-L} & is an ipopt variable \\
+\hline
+{\em z\-\_\-\-U} & is an ipopt variable \\
+\hline
+{\em status} & says if the problem has been solved or not \\
+\hline
+{\em obj\-\_\-value} & is the final cost function values \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 451 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+457 \{
+458    solution.resize(n);
+459    \textcolor{keywordflow}{for} (Ipopt::Index i=0; i<n; i++)
+460        solution[i]=x[i];
+461 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!get\-\_\-bounds\-\_\-info@{get\-\_\-bounds\-\_\-info}}
+\index{get\-\_\-bounds\-\_\-info@{get\-\_\-bounds\-\_\-info}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{get\-\_\-bounds\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::get\-\_\-bounds\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{Ipopt\-::\-Number $\ast$}]{x\-\_\-l, }
+\item[{Ipopt\-::\-Number $\ast$}]{x\-\_\-u, }
+\item[{Ipopt\-::\-Index}]{m, }
+\item[{Ipopt\-::\-Number $\ast$}]{g\-\_\-l, }
+\item[{Ipopt\-::\-Number $\ast$}]{g\-\_\-u}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a9f303ff4d778230990fd151631c2d9d4}
+
+
+Get variable bounds for the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em x\-\_\-l} & is the lower bound of the variable \\
+\hline
+{\em x\-\_\-u} & is the upper bound of the variable \\
+\hline
+{\em g\-\_\-l} & is the lower bound of the constraints \\
+\hline
+{\em g\-\_\-u} & is the upper bound of the constraints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114     computeBounds();
+115 
+116     \textcolor{keywordflow}{for} (Ipopt::Index i=0; i<n; i++)
+117     \{
+118        x\_l[i]=bounds(i,0);
+119        x\_u[i]=bounds(i,1);
+120     \}
+121 
+122     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+123 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!get\-\_\-nlp\-\_\-info@{get\-\_\-nlp\-\_\-info}}
+\index{get\-\_\-nlp\-\_\-info@{get\-\_\-nlp\-\_\-info}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{get\-\_\-nlp\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::get\-\_\-nlp\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index \&}]{n, }
+\item[{Ipopt\-::\-Index \&}]{m, }
+\item[{Ipopt\-::\-Index \&}]{nnz\-\_\-jac\-\_\-g, }
+\item[{Ipopt\-::\-Index \&}]{nnz\-\_\-h\-\_\-lag, }
+\item[{Ipopt\-::\-T\-N\-L\-P\-::\-Index\-Style\-Enum \&}]{index\-\_\-style}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a2599f20c7a4c6eb3da7dec612098d1b4}
+
+
+Get info for the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em nnz\-\_\-jac\-\_\-g} & is the dimensions of the jacobian \\
+\hline
+{\em nnz\-\_\-h\-\_\-lag} & is an ipopt variable \\
+\hline
+{\em index\-\_\-styl} & is an ipopt variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73     n=11;
+74     m=nnz\_jac\_g=nnz\_h\_lag=0;
+75     index\_style=TNLP::C\_STYLE;
+76     x\_v.resize(n,0.0);
+77 
+78     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+79 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!get\-\_\-result@{get\-\_\-result}}
+\index{get\-\_\-result@{get\-\_\-result}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{get\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}Vector Super\-Quadric\-\_\-\-N\-L\-P\-::get\-\_\-result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classSuperQuadric__NLP_a20d671b200f1b23358792ee81aa77552}
+
+
+Extract the solution. 
+
+\begin{DoxyReturn}{Returns}
+the superquadric as a Vector 
+\end{DoxyReturn}
+
+
+Definition at line 464 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+465 \{
+466    \textcolor{keywordflow}{return} solution;
+467 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!get\-\_\-starting\-\_\-point@{get\-\_\-starting\-\_\-point}}
+\index{get\-\_\-starting\-\_\-point@{get\-\_\-starting\-\_\-point}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{get\-\_\-starting\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::get\-\_\-starting\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{Ipopt\-::\-Index}]{n, }
+\item[{bool}]{init\-\_\-x, }
+\item[{Ipopt\-::\-Number $\ast$}]{x, }
+\item[{bool}]{init\-\_\-z, }
+\item[{Ipopt\-::\-Number $\ast$}]{z\-\_\-\-L, }
+\item[{Ipopt\-::\-Number $\ast$}]{z\-\_\-\-U, }
+\item[{Ipopt\-::\-Index}]{m, }
+\item[{bool}]{init\-\_\-lambda, }
+\item[{Ipopt\-::\-Number $\ast$}]{lambda}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperQuadric__NLP_a05ec724269d1060c5e53112817938639}
+
+
+Get the starting point for the nonlinear problem to be solved with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & is the dimension of the variable \\
+\hline
+{\em init\-\_\-x} & is the starting point of the optimization problem \\
+\hline
+{\em x} & is the variable \\
+\hline
+{\em init\-\_\-z} & is an ipopt variable \\
+\hline
+{\em z\-\_\-\-L} & is an ipopt variable \\
+\hline
+{\em z\-\_\-\-U} & is an ipopt variable \\
+\hline
+{\em m} & is the number of constraints \\
+\hline
+{\em init\-\_\-lambda} & is an ipopt variable \\
+\hline
+{\em lambda} & is an ipopt variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+129  \{
+130      \textcolor{keywordflow}{for} (Ipopt::Index i=0;i<n;i++)
+131      \{
+132          x[i]=x0[i];
+133      \}
+134      \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+135  \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!read\-Matrix@{read\-Matrix}}
+\index{read\-Matrix@{read\-Matrix}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{read\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}bool Super\-Quadric\-\_\-\-N\-L\-P\-::read\-Matrix (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{tag, }
+\item[{yarp\-::sig\-::\-Matrix \&}]{matrix, }
+\item[{const int \&}]{dimension, }
+\item[{yarp\-::os\-::\-Resource\-Finder $\ast$}]{rf}
+\end{DoxyParamCaption}
+)}\label{classSuperQuadric__NLP_a964efe0e0fe66464238f99885c6323bf}
+
+
+Function for reading matrices from config files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & is the name of the quantity to be read from text \\
+\hline
+{\em matrix} & is the matrix to be filled \\
+\hline
+{\em dimensions} & is the matrix dimensions \\
+\hline
+{\em rf} & is the resource finder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Definition at line 389 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+390 \{
+391    \textcolor{keywordtype}{string} tag\_x=tag+\textcolor{stringliteral}{"\_x"};
+392    \textcolor{keywordtype}{string} tag\_y=tag+\textcolor{stringliteral}{"\_y"};
+393    \textcolor{keywordtype}{bool} check\_x;
+394 
+395    \textcolor{keywordflow}{if} (tag==\textcolor{stringliteral}{"x0"})
+396    \{
+397        \textcolor{keywordflow}{if} (Bottle *b=rf->find(tag.c\_str()).asList())
+398        \{
+399            Vector col;
+400            \textcolor{keywordflow}{if} (b->size()>=dimension)
+401            \{
+402                \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<b->size();i++)
+403                    col.push\_back(b->get(i).asDouble());
+404 
+405                matrix.setCol(0, col);
+406            \}
+407            \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+408        \}
+409    \}
+410    \textcolor{keywordflow}{else}
+411    \{
+412        \textcolor{keywordflow}{if} (tag==\textcolor{stringliteral}{"bounds\_"}+obj\_class)
+413        \{
+414            tag\_x=tag+\textcolor{stringliteral}{"\_l"};
+415            tag\_y=tag+\textcolor{stringliteral}{"\_u"};
+416        \}
+417 
+418        \textcolor{keywordflow}{if} (Bottle *b=rf->find(tag\_x.c\_str()).asList())
+419        \{
+420            Vector col;
+421            \textcolor{keywordflow}{if} (b->size()>=dimension)
+422            \{
+423                \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<b->size();i++)
+424                    col.push\_back(b->get(i).asDouble());
+425 
+426                matrix.setCol(0, col);
+427            \}
+428            check\_x=\textcolor{keyword}{true};
+429 
+430        \}
+431 
+432        \textcolor{keywordflow}{if} (Bottle *b=rf->find(tag\_y.c\_str()).asList())
+433        \{
+434            Vector col;
+435            \textcolor{keywordflow}{if} (b->size()>=dimension)
+436            \{
+437                \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<b->size();i++)
+438                    col.push\_back(b->get(i).asDouble());
+439                matrix.setCol(1, col);
+440            \}
+441 
+442            \textcolor{keywordflow}{if} (check\_x==\textcolor{keyword}{true})
+443                \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+444        \}
+445 
+446    \}
+447    \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+448 \}
+\end{DoxyCode}
+\index{Super\-Quadric\-\_\-\-N\-L\-P@{Super\-Quadric\-\_\-\-N\-L\-P}!set\-Points@{set\-Points}}
+\index{set\-Points@{set\-Points}!SuperQuadric_NLP@{Super\-Quadric\-\_\-\-N\-L\-P}}
+\subsubsection[{set\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Super\-Quadric\-\_\-\-N\-L\-P\-::set\-Points (
+\begin{DoxyParamCaption}
+\item[{const std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ \&}]{point\-\_\-cloud, }
+\item[{const int \&}]{optimizer\-\_\-points}
+\end{DoxyParamCaption}
+)}\label{classSuperQuadric__NLP_a6895a29435328142fcb31a4827742fa6}
+
+
+Set point to be used for superquadric estimation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\-\_\-cloud} & is the object point cloud \\
+\hline
+{\em optimizer\-\_\-points} & is the maximum number of points to be used for the optimization problem \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file superquadric.\-cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{if} (point\_cloud.size()<optimizer\_points)
+47     \{
+48         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0;i<point\_cloud.size();i++)
+49         \{
+50             points\_downsampled.push\_back(point\_cloud[i].subVector(0,2));
+51         \}
+52     \}
+53     \textcolor{keywordflow}{else}
+54     \{
+55         \textcolor{keywordtype}{int} count=point\_cloud.size()/optimizer\_points;
+56 
+57         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<point\_cloud.size(); i+=count)
+58         \{
+59             points\_downsampled.push\_back(point\_cloud[i].subVector(0,2));
+60         \}
+61     \}
+62 
+63     yInfo(\textcolor{stringliteral}{"[Superquadric] points actually used for modeling: %lu "},points\_downsampled.size());
+64 
+65     x0.resize(11,0.0);
+66     computeX0(x0, points\_downsampled);
+67 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/gvezzani/\-Desktop/\-Ph\-D/\-Anno\-\_\-1/super\-Quadratiche/superquadric-\/model/include/superquadric.\-h\item 
+/home/gvezzani/\-Desktop/\-Ph\-D/\-Anno\-\_\-1/super\-Quadratiche/superquadric-\/model/src/superquadric.\-cpp\end{DoxyCompactItemize}

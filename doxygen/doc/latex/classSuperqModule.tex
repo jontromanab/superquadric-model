@@ -1,0 +1,1172 @@
+\section{Superq\-Module Class Reference}
+\label{classSuperqModule}\index{Superq\-Module@{Superq\-Module}}
+
+
+The \hyperlink{classSuperqModule}{Superq\-Module} class handle the superquadric computation and visualization, the point cloud and superquadric filtering and the interaction with the user.  
+
+
+
+
+{\ttfamily \#include $<$superq\-Module.\-h$>$}
+
+Inheritance diagram for Superq\-Module\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSuperqModule}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classSuperqModule_aeec20285d89c1542d1b91c05c0f82539}{get\-Period} ()
+\begin{DoxyCompactList}\small\item\em Get period function of R\-F module. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_adba43b8815167f66e940bd80ab944af3}{update\-Module} ()\label{classSuperqModule_adba43b8815167f66e940bd80ab944af3}
+
+\begin{DoxyCompactList}\small\item\em update\-Module function of R\-F module \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a99527edc64196d4a9136416331fd5dd1}{configure} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_a99527edc64196d4a9136416331fd5dd1}
+
+\begin{DoxyCompactList}\small\item\em configure function of R\-F module \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_aca14ea8a02d8dbdef9a023da4c336891}{interrupt\-Module} ()\label{classSuperqModule_aca14ea8a02d8dbdef9a023da4c336891}
+
+\begin{DoxyCompactList}\small\item\em interrupt module function of R\-F module \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a6f88e21fe14a124919ffb07e26c04d15}{close} ()\label{classSuperqModule_a6f88e21fe14a124919ffb07e26c04d15}
+
+\begin{DoxyCompactList}\small\item\em close function of R\-F module \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a045733615dbe0c97f714dde4ea47a164}{config\-On\-Off} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_a045733615dbe0c97f714dde4ea47a164}
+
+\begin{DoxyCompactList}\small\item\em Configure all on/off options. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_abe9bafeec746eb23da8f89cada86849e}{config\-Filter} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_abe9bafeec746eb23da8f89cada86849e}
+
+\begin{DoxyCompactList}\small\item\em Configure point cloud filter options. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a706feb064c09186585a97422603e6278}{config\-Filter\-Superq} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_a706feb064c09186585a97422603e6278}
+
+\begin{DoxyCompactList}\small\item\em Configure superquadric filter options. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_aa27116ca1ef35ae86459aad82f4c53cb}{config\-Services} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_aa27116ca1ef35ae86459aad82f4c53cb}
+
+\begin{DoxyCompactList}\small\item\em Open ports for communication. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a36f445a18edc230bcd119b098143204f}{config\-Superq} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_a36f445a18edc230bcd119b098143204f}
+
+\begin{DoxyCompactList}\small\item\em Configure superquadric computation otpions. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_ac92cfd73d4a1e08013051681ccb2e687}{config\-Viewer} (yarp\-::os\-::\-Resource\-Finder \&rf)\label{classSuperqModule_ac92cfd73d4a1e08013051681ccb2e687}
+
+\begin{DoxyCompactList}\small\item\em Configure visualization options. \end{DoxyCompactList}\item 
+void \hyperlink{classSuperqModule_ada9aa974cf680e4f6e5507c2dc463856}{save\-Superq} ()\label{classSuperqModule_ada9aa974cf680e4f6e5507c2dc463856}
+
+\begin{DoxyCompactList}\small\item\em Save computed superquadric. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a90826fc53859ecf126f22a2569611b2c}{set\-\_\-save\-\_\-points} (const std\-::string \&entry)
+\begin{DoxyCompactList}\small\item\em Set if to save or not the used point cloud. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSuperqModule_adfeeea091edd0d32d388b072f4fc9d93}{get\-\_\-save\-\_\-points} ()
+\begin{DoxyCompactList}\small\item\em Get if the used point cloud is saved or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a0e6af855b1a0f647ff4b9deca973c55d}{read\-Point\-Cloud} ()\label{classSuperqModule_a0e6af855b1a0f647ff4b9deca973c55d}
+
+\begin{DoxyCompactList}\small\item\em In offline mode, read the point cloud from a txt file. \end{DoxyCompactList}\item 
+virtual yarp\-::os\-::\-Property \hyperlink{classsuperquadricModel__IDL_a10039bb93445066d9dd29d8f6c9ef6c5}{get\-\_\-superq} (const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&point\-\_\-cloud, const bool filtered\-\_\-or\-\_\-not, const bool reset\-\_\-or\-\_\-not)
+\begin{DoxyCompactList}\small\item\em Get the parameters of the reconstructed superquadric. \end{DoxyCompactList}\item 
+virtual bool {\bfseries read} (yarp\-::os\-::\-Connection\-Reader \&connection)\label{classsuperquadricModel__IDL_ac72a24dddca13978d7adcd5cf4f40b1f}
+
+\item 
+virtual std\-::vector$<$ std\-::string $>$ {\bfseries help} (const std\-::string \&function\-Name=\char`\"{}-\/-\/all\char`\"{})\label{classsuperquadricModel__IDL_a263ca3dc1c7a21cc3ac40caadc95cf3d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries attach} (yarp\-::os\-::\-Rpc\-Server \&source)\label{classSuperqModule_a561e16c3b62e17a2fb96193c079bd970}
+
+\item 
+bool \hyperlink{classSuperqModule_ae9f0cfead2c367e4c3aa25292b5c42c6}{set\-\_\-tag\-\_\-file} (const std\-::string \&tag\-\_\-file)
+\begin{DoxyCompactList}\small\item\em Set a tag name for saving the superquadric. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSuperqModule_ac5475155a5a1b05e5fdef54699cef1a6}{get\-\_\-tag\-\_\-file} ()
+\begin{DoxyCompactList}\small\item\em Get the tag name used for saving the superquadric. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSuperqModule_a89be4778051c4dd19339021448f89b41}{get\-\_\-visualization} ()
+\begin{DoxyCompactList}\small\item\em Return if visualization is on or off. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_ae4fc54ad89b3ee72ab5ea8c8b5065866}{set\-\_\-visualization} (const std\-::string \&e)
+\begin{DoxyCompactList}\small\item\em Set if visualization is on or off. \end{DoxyCompactList}\item 
+yarp\-::os\-::\-Property \hyperlink{classSuperqModule_a4a28afabfeac67e807dcc32845b41e0c}{get\-\_\-superq} (const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&blob)
+\begin{DoxyCompactList}\small\item\em Return the computed superquadric, given the 2\-D blob of the object. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_aa5a3fb751dd83d96004fceebab14c139}{send\-\_\-point\-\_\-clouds} (const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Get the point cloud for computing the superquadric. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_ae234e2b5b715e64ef928905964660122}{reset\-\_\-filter} ()
+\begin{DoxyCompactList}\small\item\em Reset median filter for improving superquadric estimation. \end{DoxyCompactList}\item 
+yarp\-::os\-::\-Property \hyperlink{classSuperqModule_aa6825617672381dcf3eb81dc643f0aaa}{get\-\_\-superq\-\_\-filtered} ()
+\begin{DoxyCompactList}\small\item\em Return the filtered superquadric. \end{DoxyCompactList}\item 
+yarp\-::os\-::\-Property \hyperlink{classSuperqModule_ae2935a960968a6354462a728e16d60b0}{fill\-Property} (const yarp\-::sig\-::\-Vector \&sol)
+\begin{DoxyCompactList}\small\item\em Property fill the property with the superquadric solution. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a408203d0119443fb61544f84dafff8a4}{set\-\_\-points\-\_\-filtering} (const std\-::string \&entry)
+\begin{DoxyCompactList}\small\item\em Set if to filter or not the point cloud. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSuperqModule_a60c8ff17436cc55a3e9b704dd6c2529b}{get\-\_\-points\-\_\-filtering} ()
+\begin{DoxyCompactList}\small\item\em Get if the point cloud is filtered or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a902d4a48d1a919ff9d9b1f7d1c132577}{set\-\_\-superq\-\_\-filtering} (const std\-::string \&entry)
+\begin{DoxyCompactList}\small\item\em Set if to filter or not the superquadric. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classSuperqModule_a66cb1b371b92687d851b5ca23174198b}{get\-\_\-superq\-\_\-filtering} ()
+\begin{DoxyCompactList}\small\item\em Get if the superquadric is filtered or not. \end{DoxyCompactList}\item 
+yarp\-::os\-::\-Property \hyperlink{classSuperqModule_a18822e0a99dc0b13479f20960c577fb9}{get\-\_\-options} (const std\-::string \&field)
+\begin{DoxyCompactList}\small\item\em Get options of a given field\-: visualization, optimization, filtering. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_a32ccf59ac0572ca77883237dd2d12890}{set\-\_\-options} (const yarp\-::os\-::\-Property \&new\-Options, const std\-::string \&field)
+\begin{DoxyCompactList}\small\item\em Set options of specified field\-: visualization, optimization, filtering. \end{DoxyCompactList}\item 
+bool \hyperlink{classSuperqModule_aa00f3e123ab12a0c65f864f2900c36e4}{set\-\_\-object\-\_\-class} (const std\-::string \&objclass)
+\begin{DoxyCompactList}\small\item\em Set object class for improving superquadric estimation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries r}\label{classSuperqModule_ada2b94883ea2a69f9fab8cb045a5a138}
+
+\item 
+int {\bfseries g}\label{classSuperqModule_a1d40ba1a934cd176b0365116597814da}
+
+\item 
+int {\bfseries b}\label{classSuperqModule_a048daff404a4f8d8dd83072f5e7675cd}
+
+\item 
+int {\bfseries count}\label{classSuperqModule_a4fbfa7613a6f89c61454b61acf288b9f}
+
+\item 
+int {\bfseries rate}\label{classSuperqModule_aa778e1c9f9b6627b72bafe1c45e097b9}
+
+\item 
+int {\bfseries rate\-\_\-vis}\label{classSuperqModule_ad0dab1b5c69a32f877eac1ca745a0cbc}
+
+\item 
+std\-::string {\bfseries tag\-\_\-file}\label{classSuperqModule_a06b5f43aeaa26b5ca5961670f8883ab4}
+
+\item 
+std\-::string {\bfseries home\-Context\-Path}\label{classSuperqModule_aa767064e88d01bc7cd8fb2038c63e150}
+
+\item 
+yarp\-::os\-::\-Const\-String {\bfseries point\-Cloud\-File\-Name}\label{classSuperqModule_aa719adf35eb593b75e0f0930aa18a4f7}
+
+\item 
+std\-::string {\bfseries output\-File\-Name}\label{classSuperqModule_aac8cd7786df2bc4aeb0f7290807c4c49}
+
+\item 
+std\-::vector$<$ cv\-::\-Point $>$ {\bfseries contour}\label{classSuperqModule_a2a3cbd0eb9042671dbbc457f5cb25c29}
+
+\item 
+std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ {\bfseries points}\label{classSuperqModule_a9d894dfd7e6564ee41a98619c8178584}
+
+\item 
+std\-::deque$<$ yarp\-::sig\-::\-Vector $>$ {\bfseries points\-\_\-aux}\label{classSuperqModule_a94cb68f67f8c51a188e12db5fad27565}
+
+\item 
+std\-::deque$<$ cv\-::\-Point $>$ {\bfseries blob\-\_\-points}\label{classSuperqModule_a571d62b869e77e87b5fad6a13a72f813}
+
+\item 
+double {\bfseries radius}\label{classSuperqModule_a0751c095220723cf7d8b25b5d45a92e1}
+
+\item 
+int {\bfseries nn\-Threshold}\label{classSuperqModule_ab7798766f824ed28f1f4dae8a3f1356c}
+
+\item 
+int {\bfseries num\-Vertices}\label{classSuperqModule_a9cc4835f5280e71876b76331288b8dc2}
+
+\item 
+int {\bfseries median\-\_\-order}\label{classSuperqModule_ae2d1a7a9301e43d148afda36fddd87b4}
+
+\item 
+int {\bfseries min\-\_\-median\-\_\-order}\label{classSuperqModule_a96b534ae428e744f2b44d35866490fdc}
+
+\item 
+int {\bfseries max\-\_\-median\-\_\-order}\label{classSuperqModule_a1d1b6f621d446969d9a8aa9abfafa7f9}
+
+\item 
+int {\bfseries new\-\_\-median\-\_\-order}\label{classSuperqModule_a1409f49f4c5824ec604ce214654d3e22}
+
+\item 
+bool {\bfseries filter\-\_\-points}\label{classSuperqModule_aa1bc1b1b7d3ef1b287d0c8d15d9a51bc}
+
+\item 
+bool {\bfseries fixed\-\_\-window}\label{classSuperqModule_a07ff8af914d2f3b5ae9fbc03b94954e7}
+
+\item 
+bool {\bfseries filter\-\_\-superq}\label{classSuperqModule_a3e824c0b36749d3e9d2ff755004b7472}
+
+\item 
+std\-::string {\bfseries what\-\_\-to\-\_\-plot}\label{classSuperqModule_a1f1963d5a8947368cec96d4fbcc3ec79}
+
+\item 
+double {\bfseries threshold\-\_\-median}\label{classSuperqModule_a226a730b20160c8e6483bd3b1064a7bc}
+
+\item 
+double {\bfseries min\-\_\-norm\-\_\-vel}\label{classSuperqModule_ace8ceaaf035427634c78f3d720ab2432}
+
+\item 
+bool {\bfseries mode\-\_\-online}\label{classSuperqModule_adfab63f5b7aad436d9833898ea23602a}
+
+\item 
+bool {\bfseries visualization\-\_\-on}\label{classSuperqModule_aecdc7d85514cc472b7a91982d6b1f58d}
+
+\item 
+bool {\bfseries go\-\_\-on}\label{classSuperqModule_a46bddbc5530c3086005ad07281bc5ae9}
+
+\item 
+bool {\bfseries reset}\label{classSuperqModule_ad3f77b480fd86b554fabf882c090ddc1}
+
+\item 
+bool {\bfseries save\-\_\-points}\label{classSuperqModule_a67a8bc8f0d0464efc29caf5465f256e6}
+
+\item 
+double {\bfseries tol}\label{classSuperqModule_ad4843804d3d340b725debf434e5347b5}
+
+\item 
+double {\bfseries sum}\label{classSuperqModule_a01f96b54badeaf38908355577586a4c0}
+
+\item 
+double {\bfseries max\-\_\-cpu\-\_\-time}\label{classSuperqModule_aace6a0e5aa42c5e376a5e60397a4dcea}
+
+\item 
+int {\bfseries acceptable\-\_\-iter}\label{classSuperqModule_ab3c64f8ffe227d91ab3fcc8983589b3a}
+
+\item 
+int {\bfseries max\-\_\-iter}\label{classSuperqModule_ae130c3d3d0ac884336761ded94731f1b}
+
+\item 
+int {\bfseries optimizer\-\_\-points}\label{classSuperqModule_ae796a494cc0be47bf8888e9f876784dc}
+
+\item 
+std\-::string {\bfseries mu\-\_\-strategy}\label{classSuperqModule_a29a3eb467fb15cb219b43c70a8cfda8a}
+
+\item 
+std\-::string {\bfseries nlp\-\_\-scaling\-\_\-method}\label{classSuperqModule_a01f9c7e0ec759b78c782483aaf2f0085}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries x}\label{classSuperqModule_a8b845bdc0c6d35d90141968502ca9d96}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries x\-\_\-filtered}\label{classSuperqModule_adb96b7bb58edc83b70dcd4781b51130a}
+
+\item 
+double {\bfseries t\-\_\-superq}\label{classSuperqModule_a981bafe724d09df7beb3c10fa96a8980}
+
+\item 
+std\-::deque$<$ double $>$ {\bfseries times\-\_\-superq}\label{classSuperqModule_a28517e736a16c5e7dfde3bcbec6bf5fd}
+
+\item 
+double {\bfseries t\-\_\-vis}\label{classSuperqModule_ac4b02568e69c9ed84739bb252a31def6}
+
+\item 
+std\-::deque$<$ double $>$ {\bfseries times\-\_\-vis}\label{classSuperqModule_af8194f823d1dfc5072988680d71aab08}
+
+\item 
+yarp\-::os\-::\-Buffered\-Port\\*
+$<$ yarp\-::sig\-::\-Image\-Of\\*
+$<$ yarp\-::sig\-::\-Pixel\-Rgb $>$ $>$ {\bfseries port\-Img\-In}\label{classSuperqModule_aff224bd8fb7b12d73b2060b38f7a8718}
+
+\item 
+yarp\-::os\-::\-Buffered\-Port\\*
+$<$ yarp\-::os\-::\-Property $>$ {\bfseries port\-Superq}\label{classSuperqModule_ac73ad3c50ea4fe58e35a722c37a7f99e}
+
+\item 
+yarp\-::os\-::\-Rpc\-Server {\bfseries port\-Rpc}\label{classSuperqModule_ab44a4843a8cb533d80d55df985b11448}
+
+\item 
+int {\bfseries vis\-\_\-points}\label{classSuperqModule_ae8e5d7e83ef5cd80a44ce6a3bcc74cd7}
+
+\item 
+int {\bfseries vis\-\_\-step}\label{classSuperqModule_a73aa4f6c8c4c9142fb5456c9cdaaf6b6}
+
+\item 
+std\-::string {\bfseries eye}\label{classSuperqModule_a016da49606647c049c4b857a32c633c6}
+
+\item 
+yarp\-::sig\-::\-Matrix {\bfseries R}\label{classSuperqModule_ab0570fcea5cbee6364f780cca614164d}
+
+\item 
+yarp\-::sig\-::\-Matrix {\bfseries H}\label{classSuperqModule_acf23ebc65162db020fd4e25ca73ea165}
+
+\item 
+yarp\-::sig\-::\-Matrix {\bfseries K}\label{classSuperqModule_ac6ee7467d82e835c0d1b2e35236e4aaf}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries point}\label{classSuperqModule_a80128e303c0d59016e41493ca50cc94e}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries point1}\label{classSuperqModule_ab8daf379295df5a47ced6f06acfe0df9}
+
+\item 
+yarp\-::sig\-::\-Vector {\bfseries point2\-D}\label{classSuperqModule_a8839fda8369d4e2e73714cc1db6e0f5e}
+
+\item 
+std\-::deque$<$ int $>$ {\bfseries Color}\label{classSuperqModule_a15f7523202cf192d71f188db2647e50c}
+
+\item 
+yarp\-::dev\-::\-Poly\-Driver {\bfseries Gaze\-Ctrl}\label{classSuperqModule_a1ce22879df6c4586ed72a3e3b67609bb}
+
+\item 
+yarp\-::dev\-::\-I\-Gaze\-Control $\ast$ {\bfseries igaze}\label{classSuperqModule_a00ea631bed0909310e2e505f0aca688f}
+
+\item 
+yarp\-::os\-::\-Resource\-Finder $\ast$ {\bfseries rf}\label{classSuperqModule_ac781b86f89aab354c250c17cff49c2d8}
+
+\item 
+double {\bfseries t}\label{classSuperqModule_a7246f334af9922695d716a5afb4ce89e}
+
+\item 
+double {\bfseries t0}\label{classSuperqModule_aa0788b39ee666e4cd09ea4c59421dc24}
+
+\item 
+std\-::deque$<$ std\-::string $>$ {\bfseries advanced\-\_\-params}\label{classSuperqModule_aa45e8a64fbe20bc54d9f303369a618aa}
+
+\item 
+yarp\-::os\-::\-Mutex {\bfseries mutex}\label{classSuperqModule_a04543bfe968184ff3ee55905c90f12ac}
+
+\item 
+yarp\-::os\-::\-Mutex {\bfseries mutex\-\_\-shared}\label{classSuperqModule_aa6671c2457e2044f3823d671a9b7e6ea}
+
+\item 
+std\-::string {\bfseries object\-\_\-class}\label{classSuperqModule_ae26497c030a1ecd16b98096c5842f383}
+
+\item 
+Superq\-Computation $\ast$ {\bfseries superq\-Com}\label{classSuperqModule_adab3d841bcfd52387bb6dd861fddf424}
+
+\item 
+\hyperlink{classSuperqVisualization}{Superq\-Visualization} $\ast$ {\bfseries superq\-Vis}\label{classSuperqModule_a91b35d4f88a0bfda1bb6f0bcfa6976b1}
+
+\item 
+yarp\-::os\-::\-Property {\bfseries filter\-\_\-points\-\_\-par}\label{classSuperqModule_a86c20777e5607bb326216605bab0e222}
+
+\item 
+yarp\-::os\-::\-Property {\bfseries filter\-\_\-superq\-\_\-par}\label{classSuperqModule_ac9c130b5960c724aed615bbf6ac17b50}
+
+\item 
+yarp\-::os\-::\-Property {\bfseries ipopt\-\_\-par}\label{classSuperqModule_a6469063a5f34843741f727696d1803e1}
+
+\item 
+yarp\-::sig\-::\-Image\-Of\\*
+$<$ yarp\-::sig\-::\-Pixel\-Rgb $>$ $\ast$ {\bfseries img\-In}\label{classSuperqModule_ae0c421e0a3f04758c2e75a06a2fa83b7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classSuperqModule}{Superq\-Module} class handle the superquadric computation and visualization, the point cloud and superquadric filtering and the interaction with the user. 
+
+It is used to set all the parameters (offline and online) and to launch all the thread for superquadric computation and visualization. 
+
+Definition at line 40 of file superq\-Module.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Superq\-Module@{Superq\-Module}!fill\-Property@{fill\-Property}}
+\index{fill\-Property@{fill\-Property}!SuperqModule@{Superq\-Module}}
+\subsubsection[{fill\-Property}]{\setlength{\rightskip}{0pt plus 5cm}Property Superq\-Module\-::fill\-Property (
+\begin{DoxyParamCaption}
+\item[{const yarp\-::sig\-::\-Vector \&}]{sol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_ae2935a960968a6354462a728e16d60b0}
+
+
+Property fill the property with the superquadric solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol} & is a Vector of the computed superquadric \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Property with the solution 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+196 \{
+197     Property superq;
+198 
+199     Bottle bottle;
+200     Bottle &b1=bottle.addList();
+201     b1.addDouble(sol[0]); b1.addDouble(sol[1]); b1.addDouble(sol[2]);
+202     superq.put(\textcolor{stringliteral}{"dimensions"}, bottle.get(0));
+203 
+204     Bottle &b2=bottle.addList();
+205     b2.addDouble(sol[3]); b2.addDouble(sol[4]);
+206     superq.put(\textcolor{stringliteral}{"exponents"}, bottle.get(1));
+207 
+208     Bottle &b3=bottle.addList();
+209     b3.addDouble(sol[5]); b3.addDouble(sol[6]); b3.addDouble(sol[7]);
+210     superq.put(\textcolor{stringliteral}{"center"}, bottle.get(2));
+211 
+212     Bottle &b4=bottle.addList();
+213     Vector orient=dcm2axis(euler2dcm(sol.subVector(8,10)));
+214     b4.addDouble(orient[0]); b4.addDouble(orient[1]); b4.addDouble(orient[2]); b4.addDouble(orient[3]);
+215     superq.put(\textcolor{stringliteral}{"orientation"}, bottle.get(3));
+216     \textcolor{keywordflow}{return} superq;
+217 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-options@{get\-\_\-options}}
+\index{get\-\_\-options@{get\-\_\-options}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}Property Superq\-Module\-::get\-\_\-options (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a18822e0a99dc0b13479f20960c577fb9}
+
+
+Get options of a given field\-: visualization, optimization, filtering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & is one of the field of options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+property with the options of interested 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a50b388a29852f9d8b57a0bbb276d4675}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 338 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+339 \{
+340     Property advOptions;
+341     \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"points\_filter"})
+342         advOptions=superqCom->getPointsFilterPar();
+343     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"superq\_filter"})
+344         advOptions=superqCom->getSuperqFilterPar();
+345     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"optimization"})
+346         advOptions=superqCom->getIpoptPar();
+347     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"visualization"})
+348         advOptions=superqVis->getPar();
+349     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"statistics"})
+350     \{
+351         advOptions.put(\textcolor{stringliteral}{"average\_computation\_time"}, t\_superq);
+352         advOptions.put(\textcolor{stringliteral}{"average\_visualization\_time"}, t\_vis);
+353     \}       
+354 
+355     \textcolor{keywordflow}{return} advOptions;
+356 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-points\-\_\-filtering@{get\-\_\-points\-\_\-filtering}}
+\index{get\-\_\-points\-\_\-filtering@{get\-\_\-points\-\_\-filtering}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-points\-\_\-filtering}]{\setlength{\rightskip}{0pt plus 5cm}string Superq\-Module\-::get\-\_\-points\-\_\-filtering (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a60c8ff17436cc55a3e9b704dd6c2529b}
+
+
+Get if the point cloud is filtered or not. 
+
+\begin{DoxyReturn}{Returns}
+\char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_aa490ebcf39414aaaae41d5095267abb9}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 250 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+251 \{
+252     \textcolor{keywordflow}{if} (filter\_points)
+253     \{
+254         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"on"};
+255     \}
+256     \textcolor{keywordflow}{else}
+257     \{
+258         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"off"};
+259     \}
+260 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-save\-\_\-points@{get\-\_\-save\-\_\-points}}
+\index{get\-\_\-save\-\_\-points@{get\-\_\-save\-\_\-points}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-save\-\_\-points}]{\setlength{\rightskip}{0pt plus 5cm}string Superq\-Module\-::get\-\_\-save\-\_\-points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSuperqModule_adfeeea091edd0d32d388b072f4fc9d93}
+
+
+Get if the used point cloud is saved or not. 
+
+\begin{DoxyReturn}{Returns}
+\char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a4b101fe118a1ee912468562bde0b0df4}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 312 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+313 \{
+314     \textcolor{keywordflow}{if} (save\_points)
+315     \{
+316         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"on"};
+317     \}
+318     \textcolor{keywordflow}{else}
+319     \{
+320         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"off"};
+321     \}
+322 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-superq@{get\-\_\-superq}}
+\index{get\-\_\-superq@{get\-\_\-superq}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-superq}]{\setlength{\rightskip}{0pt plus 5cm}virtual yarp\-::os\-::\-Property superquadric\-Model\-\_\-\-I\-D\-L\-::get\-\_\-superq (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&}]{point\-\_\-cloud, }
+\item[{const bool}]{filtered\-\_\-or\-\_\-not, }
+\item[{const bool}]{reset\-\_\-or\-\_\-not}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classsuperquadricModel__IDL_a10039bb93445066d9dd29d8f6c9ef6c5}
+
+
+Get the parameters of the reconstructed superquadric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\-\_\-cloud} & is the 3\-D point cloud of the object we want to model with the superquadric, for instance\-: ((100.\-0 102.\-0) (100.\-0 103.\-0) ... ). \\
+\hline
+{\em filtered\-\_\-or\-\_\-not} & is a bool variable specifing if we want the superquadric to be filtered (true/1) or not (false/0). \\
+\hline
+{\em reset\-\_\-or\-\_\-not} & is a bool variable specifing if we want to reset the superquadric filtered (if enabled) or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the 12 parameters (x0, .. x11) of the current superquadric. In particular, the parameters are grouped in a Property as follows\-: \char`\"{}dimensions\char`\"{} (x0, x1, x2) are the three semi-\/axes lenghts; \char`\"{}exponents\char`\"{} (x3 and x4) are the exponents, responsible for the superquadric shape; \char`\"{}center\char`\"{}(x5, x6, x7) contains the coordinate of the superquadric center; and \char`\"{}orientation\char`\"{} (x8, x9, 10, x11) is the axis-\/angle representation obtained from the Euler angles. 
+\end{DoxyReturn}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-superq@{get\-\_\-superq}}
+\index{get\-\_\-superq@{get\-\_\-superq}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-superq}]{\setlength{\rightskip}{0pt plus 5cm}Property Superq\-Module\-::get\-\_\-superq (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&}]{blob}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_a4a28afabfeac67e807dcc32845b41e0c}
+
+
+Return the computed superquadric, given the 2\-D blob of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blob} & is the 2\-D blob of the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a property with the estimated superquadric 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+100 \{
+101     Property superq;
+102 
+103     LockGuard lg(mutex);
+104     \textcolor{comment}{//LockGuard lg(mutex\_shared);}
+105 
+106     superqCom->setPar(\textcolor{stringliteral}{"object\_class"}, object\_class);
+107 
+108     superqCom->setPar(\textcolor{stringliteral}{"one\_shot"}, \textcolor{stringliteral}{"on"});
+109 
+110     deque<Vector> p\_aux;
+111     
+112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<p.size(); i++)
+113         p\_aux.push\_back(p[i]);
+114 
+115     superqCom->sendPoints(p\_aux);
+116 
+117     \textcolor{comment}{//superqCom->step();}
+118     superqCom->run();
+119 
+120     Vector sol(11,0.0);
+121     sol=superqCom->getSolution(0);
+122 
+123     superqCom->setPar(\textcolor{stringliteral}{"one\_shot"}, \textcolor{stringliteral}{"off"});
+124     p\_aux.clear();
+125     superqCom->sendPoints(p\_aux);
+126 
+127     superq=fillProperty(sol);
+128 
+129     \textcolor{keywordflow}{return} superq;
+130 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-superq\-\_\-filtered@{get\-\_\-superq\-\_\-filtered}}
+\index{get\-\_\-superq\-\_\-filtered@{get\-\_\-superq\-\_\-filtered}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-superq\-\_\-filtered}]{\setlength{\rightskip}{0pt plus 5cm}Property Superq\-Module\-::get\-\_\-superq\-\_\-filtered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_aa6825617672381dcf3eb81dc643f0aaa}
+
+
+Return the filtered superquadric. 
+
+\begin{DoxyReturn}{Returns}
+a property with the filtered superquadric 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+178 \{
+179     \textcolor{comment}{//LockGuard lg(mutex);}
+180     Property superq;
+181     Vector sol(11,0.0);
+182     sol=superqCom->getSolution(1);
+183 
+184     superqCom->setPar(\textcolor{stringliteral}{"one\_shot"}, \textcolor{stringliteral}{"off"});
+185     deque<Vector> p\_aux;
+186     p\_aux.clear();
+187     superqCom->sendPoints(p\_aux);
+188 
+189     superq=fillProperty(sol);
+190 
+191     \textcolor{keywordflow}{return} superq;
+192 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-superq\-\_\-filtering@{get\-\_\-superq\-\_\-filtering}}
+\index{get\-\_\-superq\-\_\-filtering@{get\-\_\-superq\-\_\-filtering}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-superq\-\_\-filtering}]{\setlength{\rightskip}{0pt plus 5cm}string Superq\-Module\-::get\-\_\-superq\-\_\-filtering (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a66cb1b371b92687d851b5ca23174198b}
+
+
+Get if the superquadric is filtered or not. 
+
+\begin{DoxyReturn}{Returns}
+\char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_af99d29d42b96b8db6c90c5fd48cfb253}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 299 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+300 \{
+301     \textcolor{keywordflow}{if} (filter\_superq)
+302     \{
+303         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"on"};
+304     \}
+305     \textcolor{keywordflow}{else}
+306     \{
+307         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"off"};
+308     \}
+309 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-tag\-\_\-file@{get\-\_\-tag\-\_\-file}}
+\index{get\-\_\-tag\-\_\-file@{get\-\_\-tag\-\_\-file}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-tag\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}string Superq\-Module\-::get\-\_\-tag\-\_\-file (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_ac5475155a5a1b05e5fdef54699cef1a6}
+
+
+Get the tag name used for saving the superquadric. 
+
+\begin{DoxyReturn}{Returns}
+the currect name of the file used for saving 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a6d39eaa247aec65fe2bfefbdace4ec85}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 57 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordflow}{return} tag\_file;
+60 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-\_\-visualization@{get\-\_\-visualization}}
+\index{get\-\_\-visualization@{get\-\_\-visualization}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-\_\-visualization}]{\setlength{\rightskip}{0pt plus 5cm}string Superq\-Module\-::get\-\_\-visualization (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a89be4778051c4dd19339021448f89b41}
+
+
+Return if visualization is on or off. 
+
+\begin{DoxyReturn}{Returns}
+\char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a5d9f4f0622ba19b60218636dc108ef61}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 63 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{if} (visualization\_on)
+66         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"on"};
+67     \textcolor{keywordflow}{else}
+68         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"off"};
+69 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!get\-Period@{get\-Period}}
+\index{get\-Period@{get\-Period}!SuperqModule@{Superq\-Module}}
+\subsubsection[{get\-Period}]{\setlength{\rightskip}{0pt plus 5cm}double Superq\-Module\-::get\-Period (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSuperqModule_aeec20285d89c1542d1b91c05c0f82539}
+
+
+Get period function of R\-F module. 
+
+\begin{DoxyReturn}{Returns}
+the period 
+\end{DoxyReturn}
+
+
+Definition at line 384 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+385 \{
+386     \textcolor{keywordflow}{return} 0.0;
+387 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!reset\-\_\-filter@{reset\-\_\-filter}}
+\index{reset\-\_\-filter@{reset\-\_\-filter}!SuperqModule@{Superq\-Module}}
+\subsubsection[{reset\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::reset\-\_\-filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_ae234e2b5b715e64ef928905964660122}
+
+
+Reset median filter for improving superquadric estimation. 
+
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+170 \{
+171     superqCom->resetMedianFilter();
+172 
+173     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+174 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!send\-\_\-point\-\_\-clouds@{send\-\_\-point\-\_\-clouds}}
+\index{send\-\_\-point\-\_\-clouds@{send\-\_\-point\-\_\-clouds}!SuperqModule@{Superq\-Module}}
+\subsubsection[{send\-\_\-point\-\_\-clouds}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::send\-\_\-point\-\_\-clouds (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ yarp\-::sig\-::\-Vector $>$ \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_aa5a3fb751dd83d96004fceebab14c139}
+
+
+Get the point cloud for computing the superquadric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & is the point cloud to be acquired \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+134 \{
+135     \textcolor{comment}{//LockGuard lg(mutex);}
+136 
+137     \textcolor{comment}{//LockGuard lg\_shared(mutex\_shared);}
+138 
+139     \textcolor{keywordtype}{double} t, t\_fin;  
+140     
+141     t=Time::now();
+142 
+143     superqCom->setPar(\textcolor{stringliteral}{"object\_class"}, object\_class);
+144 
+145     yDebug()<<\textcolor{stringliteral}{"Time operations  after set par 1"}<<Time::now() - t;
+146 
+147     superqCom->setPar(\textcolor{stringliteral}{"one\_shot"}, \textcolor{stringliteral}{"on"});
+148 
+149     yDebug()<<\textcolor{stringliteral}{"Time operations after set par 2"}<<Time::now() - t;
+150 
+151     deque<Vector> p\_aux;
+152 
+153     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<p.size(); i++)
+154         p\_aux.push\_back(p[i]);
+155 
+156     superqCom->sendPoints(p\_aux);
+157     yDebug()<<\textcolor{stringliteral}{"Time operations send points "}<<Time::now() - t;
+158 
+159     \textcolor{comment}{//superqCom->step();}
+160 
+161     t\_fin= Time::now() - t;
+162 
+163     yDebug()<<\textcolor{stringliteral}{"Time operations  final"}<<t\_fin;
+164 
+165     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+166 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-object\-\_\-class@{set\-\_\-object\-\_\-class}}
+\index{set\-\_\-object\-\_\-class@{set\-\_\-object\-\_\-class}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-object\-\_\-class}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-object\-\_\-class (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{objclass}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSuperqModule_aa00f3e123ab12a0c65f864f2900c36e4}
+
+
+Set object class for improving superquadric estimation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objclass} & is the object class (according to the shape) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+377 \{
+378     object\_class=objclass;
+379 
+380     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+381 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-options@{set\-\_\-options}}
+\index{set\-\_\-options@{set\-\_\-options}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-options (
+\begin{DoxyParamCaption}
+\item[{const yarp\-::os\-::\-Property \&}]{new\-Options, }
+\item[{const std\-::string \&}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a32ccf59ac0572ca77883237dd2d12890}
+
+
+Set options of specified field\-: visualization, optimization, filtering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Options} & is a property with the options to be set \\
+\hline
+{\em field} & is the field of the options to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a575e0b591f07206b0d6c29e5cfeead37}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 359 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+360 \{
+361     \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"points\_filter"})
+362         superqCom->setPointsFilterPar(newOptions, \textcolor{keyword}{false});
+363     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"superq\_filter"})
+364         superqCom->setSuperqFilterPar(newOptions, \textcolor{keyword}{false});
+365     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"optimization"})
+366         superqCom->setIpoptPar(newOptions, \textcolor{keyword}{false});
+367     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (field==\textcolor{stringliteral}{"visualization"})
+368         superqVis->setPar(newOptions, \textcolor{keyword}{false});
+369     \textcolor{keywordflow}{else}
+370         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+371 
+372     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+373 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-points\-\_\-filtering@{set\-\_\-points\-\_\-filtering}}
+\index{set\-\_\-points\-\_\-filtering@{set\-\_\-points\-\_\-filtering}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-points\-\_\-filtering}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-points\-\_\-filtering (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a408203d0119443fb61544f84dafff8a4}
+
+
+Set if to filter or not the point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entre} & can be \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a1a2080d797a81b46b0dffa86b5367e15}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 220 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+221 \{
+222     \textcolor{keywordflow}{if} ((entry==\textcolor{stringliteral}{"on"}) || (entry==\textcolor{stringliteral}{"off"}))
+223     \{
+224         LockGuard lg(mutex);
+225         filter\_points=(entry==\textcolor{stringliteral}{"on"});
+226         \textcolor{keywordflow}{if} (filter\_points)
+227         \{
+228             Property options;
+229             options.put(\textcolor{stringliteral}{"filter\_radius"}, radius);
+230             options.put(\textcolor{stringliteral}{"filter\_nnThreshold"}, nnThreshold);
+231             superqCom->setPointsFilterPar(options, \textcolor{keyword}{false});
+232             superqCom->setPar(\textcolor{stringliteral}{"filter\_points"}, \textcolor{stringliteral}{"on"});
+233         \}
+234         \textcolor{keywordflow}{else}
+235             superqCom->setPar(\textcolor{stringliteral}{"filter\_points"}, \textcolor{stringliteral}{"off"});
+236 
+237         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: filter\_points "}<<filter\_points;
+238         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: radius        "}<<radius;
+239         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: nn-thrshold   "}<<nnThreshold;
+240 
+241         \textcolor{keywordflow}{return} \textcolor{keyword}{true};    
+242     \}
+243     \textcolor{keywordflow}{else}
+244     \{        
+245         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+246     \}
+247 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-save\-\_\-points@{set\-\_\-save\-\_\-points}}
+\index{set\-\_\-save\-\_\-points@{set\-\_\-save\-\_\-points}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-save\-\_\-points}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-save\-\_\-points (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSuperqModule_a90826fc53859ecf126f22a2569611b2c}
+
+
+Set if to save or not the used point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & can be \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a8368b783845a3e5ae7e0706ee5b888c0}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 325 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+326 \{
+327     \textcolor{keywordflow}{if} ((entry==\textcolor{stringliteral}{"on"}) || (entry==\textcolor{stringliteral}{"off"}))
+328     \{
+329         save\_points=(entry==\textcolor{stringliteral}{"on"});
+330         \textcolor{keywordflow}{if} (save\_points)
+331             superqCom->setPar(\textcolor{stringliteral}{"save\_points"}, \textcolor{stringliteral}{"on"});
+332         \textcolor{keywordflow}{else}
+333             superqCom->setPar(\textcolor{stringliteral}{"save\_points"}, \textcolor{stringliteral}{"off"});
+334     \}    
+335 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-superq\-\_\-filtering@{set\-\_\-superq\-\_\-filtering}}
+\index{set\-\_\-superq\-\_\-filtering@{set\-\_\-superq\-\_\-filtering}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-superq\-\_\-filtering}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-superq\-\_\-filtering (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_a902d4a48d1a919ff9d9b1f7d1c132577}
+
+
+Set if to filter or not the superquadric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & can be \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_af418edf09afd9374c5272d018c58e8a7}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 263 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{keywordflow}{if} ((entry==\textcolor{stringliteral}{"on"}) || (entry==\textcolor{stringliteral}{"off"}))
+266     \{
+267         LockGuard lg(mutex);
+268         filter\_superq= (entry==\textcolor{stringliteral}{"on"});
+269         \textcolor{keywordflow}{if} (filter\_superq)
+270         \{
+271             Property options;
+272             options.put(\textcolor{stringliteral}{"median\_order"}, median\_order);
+273             \textcolor{keywordflow}{if} (fixed\_window)
+274                 options.put(\textcolor{stringliteral}{"fixed\_window"}, \textcolor{stringliteral}{"on"});
+275             \textcolor{keywordflow}{else}
+276                 options.put(\textcolor{stringliteral}{"fixed\_window"}, \textcolor{stringliteral}{"off"});
+277 
+278             superqCom->setSuperqFilterPar(options, \textcolor{keyword}{false});
+279             superqCom->setPar(\textcolor{stringliteral}{"filter\_superq"}, \textcolor{stringliteral}{"on"});
+280         \}
+281         \textcolor{keywordflow}{else}
+282             superqCom->setPar(\textcolor{stringliteral}{"filter\_superq"}, \textcolor{stringliteral}{"off"});
+283 
+284         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: filter\_superq         "}<<filter\_superq;
+285         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: fixed\_window          "}<<fixed\_window;
+286         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: median\_order          "}<<median\_order;
+287         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: min\_median\_order      "}<<min\_median\_order;
+288         yInfo()<<\textcolor{stringliteral}{"[SuperqModule]: max\_median\_order      "}<<max\_median\_order;
+289 
+290         \textcolor{keywordflow}{return} \textcolor{keyword}{true};        
+291     \}
+292     \textcolor{keywordflow}{else}
+293     \{
+294         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+295     \}
+296 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-tag\-\_\-file@{set\-\_\-tag\-\_\-file}}
+\index{set\-\_\-tag\-\_\-file@{set\-\_\-tag\-\_\-file}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-tag\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-tag\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{tag\-\_\-file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_ae9f0cfead2c367e4c3aa25292b5c42c6}
+
+
+Set a tag name for saving the superquadric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\-\_\-file} & is the name of the file where to save the superquadric \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a781426bfc4862e87ef75a4bbbfa33275}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 43 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     LockGuard lg(mutex);
+46 
+47     tag\_file=tag;
+48     outputFileName=homeContextPath+\textcolor{stringliteral}{"/"}+tag\_file+\textcolor{stringliteral}{".txt"};
+49     yDebug()<<\textcolor{stringliteral}{" [SuperqModule]: File output "}<<outputFileName;
+50 
+51     superqCom->setPar(\textcolor{stringliteral}{"tag\_file"}, tag\_file);
+52 
+53     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+54 \}
+\end{DoxyCode}
+\index{Superq\-Module@{Superq\-Module}!set\-\_\-visualization@{set\-\_\-visualization}}
+\index{set\-\_\-visualization@{set\-\_\-visualization}!SuperqModule@{Superq\-Module}}
+\subsubsection[{set\-\_\-visualization}]{\setlength{\rightskip}{0pt plus 5cm}bool Superq\-Module\-::set\-\_\-visualization (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSuperqModule_ae4fc54ad89b3ee72ab5ea8c8b5065866}
+
+
+Set if visualization is on or off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & can be \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classsuperquadricModel__IDL_a651c741e9b01b25d46be96b06b91011d}{superquadric\-Model\-\_\-\-I\-D\-L}.
+
+
+
+Definition at line 72 of file superq\-Module.\-cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74     \textcolor{keywordflow}{if} ((e==\textcolor{stringliteral}{"on"}) || (e==\textcolor{stringliteral}{"off"}))
+75     \{
+76         LockGuard lg(mutex);
+77 
+78         \textcolor{keywordflow}{if} ((visualization\_on==\textcolor{keyword}{false}) && (e==\textcolor{stringliteral}{"on"}))
+79         \{
+80             superqVis->resume();
+81 
+82             visualization\_on=\textcolor{keyword}{true};
+83 
+84         \}
+85         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((visualization\_on==\textcolor{keyword}{true}) && (e==\textcolor{stringliteral}{"off"}))
+86         \{
+87             superqVis->suspend();
+88             visualization\_on=\textcolor{keyword}{false};
+89         \}
+90         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+91     \}
+92     \textcolor{keywordflow}{else}
+93     \{
+94         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+95     \}
+96 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/gvezzani/\-Desktop/\-Ph\-D/\-Anno\-\_\-1/super\-Quadratiche/superquadric-\/model/include/superq\-Module.\-h\item 
+/home/gvezzani/\-Desktop/\-Ph\-D/\-Anno\-\_\-1/super\-Quadratiche/superquadric-\/model/src/superq\-Module.\-cpp\end{DoxyCompactItemize}
